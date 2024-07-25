@@ -17,7 +17,8 @@ export const editTask = async (req: Request) => {
     // Return a JSON response indicating success and the updated list of tasks.
     return Response.json({ message: "successfully", tasks });
   } catch (err: any) {
+    const tasks: ITasks[] = (await Task.find()).reverse();
     // If an error occurs, return a JSON response with the error message.
-    return Response.json({ message: err.message });
+    return Response.json({ message: err.message, tasks });
   }
 };

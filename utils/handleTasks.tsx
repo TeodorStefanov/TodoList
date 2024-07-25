@@ -37,6 +37,9 @@ export const handleAddTask = async (taskName: string) => {
   // If the request is successful, parse and return the updated list of tasks.
   if (promise.status === 200) {
     const result = await promise.json();
+    if (result.message !== "successfully") {
+      alert("This task has already exist.");
+    }
     return result.tasks;
   }
 };
@@ -53,6 +56,9 @@ export const handleEditTask = async (isEdit: string, taskName: string) => {
   // If the request is successful, parse and return the updated list of tasks.
   if (promise.status === 200) {
     const result = await promise.json();
+    if (result.message !== "successfully") {
+      alert("This task has already exist.");
+    }
     return result.tasks;
   }
 };

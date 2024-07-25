@@ -23,27 +23,23 @@ const Todo: FC = () => {
   const [taskName, setTaskName] = useState<string>("");
   const [allTasks, setAllTasks] = useState<ITasks[] | []>([]);
   const [isEdit, setIsEdit] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(true);
 
   const editAddTask = async () => {
     // Function to handle adding or editing a task.
-    setLoading(true);
+
     if (isEdit) {
       setAllTasks(await handleEditTask(isEdit, taskName));
       setIsEdit("");
       setTaskName("");
-      setLoading(false);
     } else {
       setAllTasks(await handleAddTask(taskName));
       setTaskName("");
-      setLoading(false);
     }
   };
 
   const takeAllTasks = async () => {
     // Function to fetch all tasks.
     setAllTasks(await handleTakeAllTasks());
-    setLoading(false);
   };
 
   const handleClickEdit = (name: string, id: string) => {
@@ -56,10 +52,6 @@ const Todo: FC = () => {
     // useEffect to fetch all tasks on component mount.
     takeAllTasks();
   }, []); // Empty dependency array means this runs only once on mount.
-
-  if (loading) {
-    return <LoadingLoader />;
-  }
 
   return (
     <div className={styles.wrapper}>
