@@ -1,0 +1,102 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: 70%;
+  background-color: rgb(61, 55, 55);
+  min-height: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #000000;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.tasksMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.addTask {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.todoInput {
+  width: 80%;
+  color: white;
+  border: 1px solid rgb(80, 223, 214);
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.todoButton {
+  width: 45px;
+  height: 40px;
+  border: 1px solid rgb(80, 223, 214);
+  border-radius: 10px;
+  background-color: rgb(42, 186, 222);
+}
+
+.todoButton:hover {
+  cursor: pointer;
+  background-color: rgb(91, 171, 192);
+}
+
+.tasks {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  margin: 10px;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #d6e1e0;
+    border-radius: 25px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid green;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
