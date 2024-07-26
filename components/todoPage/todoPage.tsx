@@ -3,7 +3,7 @@
 
 import { FC, useEffect, useState } from "react";
 import styles from "./todoPage.module.css";
-import LoadingLoader from "../loadingLoader/loadingLoader";
+
 import {
   handleClickDelete,
   handleAddTask,
