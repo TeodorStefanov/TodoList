@@ -5,6 +5,6 @@ Next.js 14 To-Do List This is a simple To-Do List application built using Next.j
 1. Clone the repository:
 2. npm install
 3. Create a .env.local file in the root of the project with the following content:
-   DATABASE_URL=mongodb+srv://user:123123abc@softuni.dg6bv.mongodb.net/TodoList?retryWrites=true&w=majority
+   DATABASE_URL=(Create your own mongoDB database collection and put it here)
 4. npm run dev
 5. Open http://localhost:3000 in your browser to see the application in action.
